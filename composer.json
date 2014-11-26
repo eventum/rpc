@@ -1,0 +1,24 @@
+{
+	"name": "eventum/rpc",
+	"description": "Eventum RPC Client Library",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Elan Ruusamäe",
+			"email": "glen@delfi.ee"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://raw.githubusercontent.com/eventum/composer/repo/"
+		}
+	],
+	"require": {
+		"pear-pear.php.net/XML_RPC": "~1.5.5",
+		"php": ">=5.1.2"
+	},
+	"autoload": {
+		"classmap": [ "class.Eventum_RPC.php" ]
+	}
+}

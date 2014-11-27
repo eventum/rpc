@@ -81,7 +81,6 @@ class Eventum_RPC
         if (!isset($data['path'])) {
             $data['path'] = '';
         }
-        $data['path'] .= '/rpc/xmlrpc.php';
 
         return new XML_RPC_Client($data['path'], $data['host'], $data['port']);
     }

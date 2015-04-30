@@ -76,6 +76,16 @@ class Eventum_RPC
         $this->client->setCredentials($username, $password);
     }
 
+    /**
+     * Implementation independent method to encode value as binary
+     *
+     * @param mixed $value
+     * @return XML_RPC_Value
+     */
+    public function encodeBinary($value) {
+        return new XML_RPC_Value($value, 'base64');
+    }
+
     private function getClient()
     {
         $data = parse_url($this->url);

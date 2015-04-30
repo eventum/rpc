@@ -89,11 +89,7 @@ class Eventum_RPC
     {
         $params = array();
         foreach ($args as $arg) {
-            $type = gettype($arg);
-            if ($type == 'integer') {
-                $type = 'int';
-            }
-            $params[] = new XML_RPC_Value($arg, $type);
+            $params[] = XML_RPC_encode($arg);
         }
         $msg = new XML_RPC_Message($method, $params);
 

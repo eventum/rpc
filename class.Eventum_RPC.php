@@ -48,6 +48,10 @@ class Eventum_RPC
     {
         $this->url = $url;
         $this->client = $this->getClient();
+
+	    // not sure why this is ever off,
+	    // because data that can't be encoded to xml can't be submitted at all
+		$this->client->setAutoBase64(true);
     }
 
     /**

@@ -103,10 +103,17 @@ class Eventum_RPC
     {
         $params = array();
         foreach ($args as $arg) {
+            // argument already encoded as XML_RPC_Value
             if ($arg instanceof XML_RPC_Value) {
                 $params[] = $arg;
                 continue;
             }
+
+            // serialize all objects first
+            if (is_object($arg)) {
+                $arg = serialize($arg);
+            }
+
             $params[] = XML_RPC_encode($arg);
         }
         $msg = new XML_RPC_Message($method, $params);

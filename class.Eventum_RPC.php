@@ -1,4 +1,5 @@
 <?php
+
 /* vim: set expandtab tabstop=4 shiftwidth=4 encoding=utf-8: */
 // +----------------------------------------------------------------------+
 // | Eventum - Issue Tracking System                                      |
@@ -49,9 +50,9 @@ class Eventum_RPC
         $this->url = $url;
         $this->client = $this->getClient();
 
-	    // not sure why this is ever off,
-	    // because data that can't be encoded to xml can't be submitted at all
-		$this->client->setAutoBase64(true);
+        // not sure why this is ever off,
+        // because data that can't be encoded to xml can't be submitted at all
+        $this->client->setAutoBase64(true);
     }
 
     /**
@@ -82,7 +83,8 @@ class Eventum_RPC
      * @param mixed $value
      * @return XML_RPC_Value
      */
-    public function encodeBinary($value) {
+    public function encodeBinary($value)
+    {
         return new XML_RPC_Value($value, 'base64');
     }
 

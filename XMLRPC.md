@@ -1,3 +1,10 @@
+## Available XMLRPC methods ##
+
+Here are available XMLRPC methods in [Eventum](https://github.com/eventum/eventum) as of version 3.0.2.
+
+The methods themselves are defined in [RemoteApi](https://github.com/eventum/eventum/blob/master/lib/eventum/rpc/RemoteApi.php) class in Eventum codebase.
+
+This output is created with Eventum [CLI](https://github.com/eventum/cli) application [DumpMethods](https://github.com/eventum/cli/blob/master/src/Command/DumpMethodsCommand.php) command.
 
 
 ```php

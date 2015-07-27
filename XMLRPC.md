@@ -278,6 +278,7 @@ Methods marked `@access public` do not require authentication, while `@access re
      * @param int $time_spent
      * @return string
      * @access protected
+     * @since 3.0.2 checks access via Issue::canUpdate
      */
     function recordTimeWorked(int, int, string, int): string
 
@@ -327,4 +328,3 @@ Methods marked `@access public` do not require authentication, while `@access re
      * @access protected
      */
     function unredeemIssue(int, array): string
-```

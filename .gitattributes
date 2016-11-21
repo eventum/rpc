@@ -4,3 +4,5 @@
 
 # maintenance tools
 /.php_cs export-ignore
+/phpunit.xml
+/tests/

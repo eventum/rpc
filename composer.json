@@ -8,15 +8,9 @@
 			"email": "glen@delfi.ee"
 		}
 	],
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "https://eventum.github.io/composer/"
-		}
-	],
 	"require": {
-		"pear-pear.php.net/XML_RPC": "~1.5.5",
-		"php": ">=5.1.2"
+		"php": "^5.3.0 || ^7.0",
+		"phpxmlrpc/phpxmlrpc": "^4.1"
 	},
 	"autoload": {
 		"classmap": [ "src" ]

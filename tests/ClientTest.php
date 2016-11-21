@@ -38,7 +38,7 @@ class ClientTest extends TestCase
         $method = 'system.listMethods';
 
         $client = new Eventum_RPC($url);
-        $methods = $client->__call($method, array());
+        $methods = $client->__call($method);
         $this->assertContains($method, $methods);
     }
 }

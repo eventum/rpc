@@ -19,6 +19,6 @@
 		"php": ">=5.1.2"
 	},
 	"autoload": {
-		"classmap": [ "class.Eventum_RPC.php" ]
+		"classmap": [ "src" ]
 	}
 }

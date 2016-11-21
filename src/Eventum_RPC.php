@@ -24,25 +24,23 @@ class Eventum_RPC
      */
     private $url;
 
-    /**
-     * @var XML_RPC_Client
-     */
+    /** @var PhpXmlRpc\Client */
     private $client;
+
+    /** @var PhpXmlRpc\Encoder */
+    private $encoder;
 
     public function __construct($url)
     {
         $this->url = $url;
-        $this->client = $this->getClient();
-
-        // not sure why this is ever off,
-        // because data that can't be encoded to xml can't be submitted at all
-        $this->client->setAutoBase64(true);
+        $this->client = new PhpXmlRpc\Client($this->url);
+        $this->encoder = new PhpXmlRpc\Encoder();
     }
 
     /**
      * Change the current debug mode
      *
-     * @param int $debug  where 1 = on, 0 = off
+     * @param int $debug where 1 = on, 0 = off
      */
     public function setDebug($debug)
     {
@@ -65,32 +63,20 @@ class Eventum_RPC
      * Implementation independent method to encode value as binary
      *
      * @param mixed $value
-     * @return XML_RPC_Value
+     * @return \PhpXmlRpc\Value
+     * @since 3.0.1
      */
     public function encodeBinary($value)
     {
-        return new XML_RPC_Value($value, 'base64');
+        return new PhpXmlRpc\Value($value, 'base64');
     }
 
-    private function getClient()
-    {
-        $data = parse_url($this->url);
-        if (!isset($data['port'])) {
-            $data['port'] = $data['scheme'] == 'https' ? 443 : 80;
-        }
-        if (!isset($data['path'])) {
-            $data['path'] = '';
-        }
-
-        return new XML_RPC_Client($data['path'], $data['host'], $data['port']);
-    }
-
-    public function __call($method, $args)
+    public function __call($method, $args = array())
     {
         $params = array();
         foreach ($args as $arg) {
-            // argument already encoded as XML_RPC_Value
-            if ($arg instanceof XML_RPC_Value) {
+            // argument already encoded, perhaps via encodeBinary
+            if ($arg instanceof PhpXmlRpc\Value) {
                 $params[] = $arg;
                 continue;
             }
@@ -100,11 +86,11 @@ class Eventum_RPC
                 $arg = serialize($arg);
             }
 
-            $params[] = XML_RPC_encode($arg);
+            $params[] = $this->encoder->encode($arg);
         }
-        $msg = new XML_RPC_Message($method, $params);
 
-        $result = $this->client->send($msg);
+        $req = new PhpXmlRpc\Request($method, $params);
+        $result = $this->client->send($req);
 
         if ($result === 0) {
             throw new Eventum_RPC_Exception($this->client->errstr);
@@ -113,7 +99,7 @@ class Eventum_RPC
             throw new Eventum_RPC_Exception($result->faultString());
         }
 
-        $value = XML_RPC_decode($result->value());
+        $value = $this->encoder->decode($result->value());
 
         return $value;
     }

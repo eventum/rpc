@@ -11,6 +11,10 @@
  * that were distributed with this source code.
  */
 
-if (file_exists($autoload = __DIR__ . '/../vendor/autoload.php')) {
-    require_once $autoload;
+namespace Eventum\RPC\Test;
+
+use PHPUnit_Framework_TestCase;
+
+class TestCase extends PHPUnit_Framework_TestCase
+{
 }

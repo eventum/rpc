@@ -11,6 +11,19 @@
  * that were distributed with this source code.
  */
 
-if (file_exists($autoload = __DIR__ . '/../vendor/autoload.php')) {
-    require_once $autoload;
+namespace Eventum\RPC\Test;
+
+use Eventum_RPC;
+
+class ClientTest extends TestCase
+{
+    /**
+     * Test that instance can be created
+     */
+    public function testInstance()
+    {
+        $url = 'http://localhost/';
+        $client = new Eventum_RPC($url);
+        $this->assertNotEmpty($client);
+    }
 }

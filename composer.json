@@ -20,5 +20,10 @@
 	},
 	"autoload": {
 		"classmap": [ "src" ]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Eventum\\RPC\\Test\\": "tests/"
+		}
 	}
 }

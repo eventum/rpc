@@ -1,0 +1,6 @@
+# general excludes
+/.gitignore export-ignore
+/.gitattributes export-ignore
+
+# maintenance tools
+/.php_cs export-ignore

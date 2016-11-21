@@ -4,5 +4,6 @@
 
 # maintenance tools
 /.php_cs export-ignore
-/phpunit.xml
-/tests/
+/.travis.yml export-ignore
+/phpunit.xml export-ignore
+/tests/ export-ignore

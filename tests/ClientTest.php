@@ -26,4 +26,19 @@ class ClientTest extends TestCase
         $client = new Eventum_RPC($url);
         $this->assertNotEmpty($client);
     }
+
+    /**
+     * Test actual call to public phpxmlrpc server
+     *
+     * @group network
+     */
+    public function testRequest()
+    {
+        $url = 'http://phpxmlrpc.sourceforge.net/server.php';
+        $method = 'system.listMethods';
+
+        $client = new Eventum_RPC($url);
+        $methods = $client->__call($method, array());
+        $this->assertContains($method, $methods);
+    }
 }

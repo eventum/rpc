@@ -11,11 +11,11 @@
  * that were distributed with this source code.
  */
 
-class Eventum_RPC_Exception extends Exception
-{
-}
+namespace Eventum\RPC;
 
-class Eventum_RPC
+use PhpXmlRpc;
+
+class Client
 {
     /**
      * The URL of Eventum installation to send requests to
@@ -93,10 +93,10 @@ class Eventum_RPC
         $result = $this->client->send($req);
 
         if ($result === 0) {
-            throw new Eventum_RPC_Exception($this->client->errstr);
+            throw new ClientException($this->client->errstr);
         }
         if (is_object($result) && $result->faultCode()) {
-            throw new Eventum_RPC_Exception($result->faultString());
+            throw new ClientException($result->faultString());
         }
 
         $value = $this->encoder->decode($result->value());

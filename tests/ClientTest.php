@@ -13,7 +13,7 @@
 
 namespace Eventum\RPC\Test;
 
-use Eventum_RPC;
+use Eventum\RPC\Client;
 
 class ClientTest extends TestCase
 {
@@ -23,7 +23,7 @@ class ClientTest extends TestCase
     public function testInstance()
     {
         $url = 'http://localhost/';
-        $client = new Eventum_RPC($url);
+        $client = new Client($url);
         $this->assertNotEmpty($client);
     }
 
@@ -37,7 +37,7 @@ class ClientTest extends TestCase
         $url = 'http://phpxmlrpc.sourceforge.net/server.php';
         $method = 'system.listMethods';
 
-        $client = new Eventum_RPC($url);
+        $client = new Client($url);
         $methods = $client->__call($method);
         $this->assertContains($method, $methods);
     }

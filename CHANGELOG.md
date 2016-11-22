@@ -1,6 +1,6 @@
 # Eventum RPC Client Library
 
-## [4.0.0] - UNRELEASED
+## [4.0.0] - 2016-11-23
 
  - replace xmlrpc implementation with phpxmlrpc/phpxmlrpc, [#1]
 
@@ -23,7 +23,7 @@
  - library released separately from Eventum Core
  - adds composer support
 
-[4.0.0]: https://github.com/eventum/rpc/compare/v3.0.3...master
+[4.0.0]: https://github.com/eventum/rpc/compare/v3.0.3...v4.0.0
 [3.0.3]: https://github.com/eventum/rpc/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/eventum/rpc/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/eventum/rpc/compare/v3.0.0...v3.0.1

@@ -22,7 +22,7 @@ You should now have the file `composer.phar` in your project directory.
 Run in your project root:
 
 ```
-php composer.phar require eventum/rpc:~3.0
+php composer.phar require eventum/rpc
 ```
 
 You should now have the files `composer.json` and `composer.lock` as well as
@@ -57,7 +57,7 @@ The available XMLRPC Methods can be seen from [here](XMLRPC.md).
 
 ## Copyright and License ##
 
-This software is Copyright (c) 2008 - 2015 Eventum Team.
+This software is Copyright (c) 2008 - 2017 Eventum Team.
 
 This is free software, licensed under the GNU General Public License
 version 2.

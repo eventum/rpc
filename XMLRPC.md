@@ -168,7 +168,7 @@ Methods marked `@access public` do not require authentication, while `@access re
 
     /**
      * @param int $prj_id
-     * @param boolean $show_all_issues
+     * @param bool $show_all_issues
      * @param string $status
      * @return array
      * @access protected
@@ -217,11 +217,12 @@ Methods marked `@access public` do not require authentication, while `@access re
      * @param string $start
      * @param string $end
      * @param bool $separate_closed
+     * @param int $prj_id
      * @return string
      * @access protected
      * @deprecated use getWeeklyReportData() and format data yourself
      */
-    function getWeeklyReport(int, string, string, boolean): string
+    function getWeeklyReport(int, string, string, boolean, int): string
 
     /**
      * Get data for weekly report.
@@ -237,14 +238,12 @@ Methods marked `@access public` do not require authentication, while `@access re
     function getWeeklyReportData(int, string, string, struct): string
 
     /**
-     * FIXME: this should return bool
-     *
      * @param string $email
      * @param string $password
-     * @return string
+     * @return bool
      * @access public
      */
-    function isValidLogin(string, string): string
+    function isValidLogin(string, string): boolean
 
     /**
      * @param string $command
@@ -303,6 +302,7 @@ Methods marked `@access public` do not require authentication, while `@access re
      * @param string $new_status
      * @return string
      * @access protected
+     * @since 3.2.2 checks access via Access::canChangeStatus
      */
     function setIssueStatus(int, string): string
 

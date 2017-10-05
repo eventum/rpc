@@ -17,6 +17,7 @@ class Eventum_RPC_Exception extends Exception
 
 class Eventum_RPC
 {
+    const VERSION = '4.0.0-dev';
 
     /** @var PhpXmlRpc\Client */
     private $client;
@@ -28,6 +29,8 @@ class Eventum_RPC
     {
         $this->client = new PhpXmlRpc\Client($url);
         $this->encoder = new PhpXmlRpc\Encoder();
+
+        $this->setUserAgent($this->client);
     }
 
     /**
@@ -99,5 +102,18 @@ class Eventum_RPC
         }
 
         return $this->encoder->decode($result->value());
+    }
+
+    /**
+     * Add identifier to user agent
+     *
+     * @param PhpXmlRpc\Client $client
+     */
+    private function setUserAgent($client)
+    {
+        $userAgent = $client->user_agent;
+        $userAgent .= ' EventumRPC/' . self::VERSION;
+
+        $client->setUserAgent($userAgent);
     }
 }

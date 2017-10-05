@@ -17,12 +17,6 @@ class Eventum_RPC_Exception extends Exception
 
 class Eventum_RPC
 {
-    /**
-     * The URL of Eventum installation to send requests to
-     *
-     * @var string
-     */
-    private $url;
 
     /** @var PhpXmlRpc\Client */
     private $client;
@@ -32,8 +26,7 @@ class Eventum_RPC
 
     public function __construct($url)
     {
-        $this->url = $url;
-        $this->client = new PhpXmlRpc\Client($this->url);
+        $this->client = new PhpXmlRpc\Client($url);
         $this->encoder = new PhpXmlRpc\Encoder();
     }
 

@@ -64,6 +64,12 @@ class Eventum_RPC
         return new PhpXmlRpc\Value($value, 'base64');
     }
 
+    /**
+     * @param string $method
+     * @param array $args
+     * @return mixed
+     * @throws Eventum_RPC_Exception
+     */
     public function __call($method, $args = array())
     {
         $params = array();
@@ -92,8 +98,6 @@ class Eventum_RPC
             throw new Eventum_RPC_Exception($result->faultString());
         }
 
-        $value = $this->encoder->decode($result->value());
-
-        return $value;
+        return $this->encoder->decode($result->value());
     }
 }

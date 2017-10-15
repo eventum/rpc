@@ -29,7 +29,7 @@ install:
   - composer require --dev phpunit/phpunit
 
 script:
-  - phpunit --version
-  - phpunit --verbose
+  - vendor/bin/phpunit --version
+  - vendor/bin/phpunit --verbose
 
 # vim:ts=2:sw=2:et

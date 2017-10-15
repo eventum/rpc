@@ -17,7 +17,7 @@ class Eventum_RPC_Exception extends Exception
 
 class Eventum_RPC
 {
-    const VERSION = '4.0.0-dev';
+    const VERSION = '4.1.0';
 
     /** @var PhpXmlRpc\Client */
     private $client;

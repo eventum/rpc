@@ -1,5 +1,11 @@
 # Eventum RPC Client Library
 
+## [4.1.1] - 2017-10-15
+
+- add `addUserAgent` method for public access
+
+[4.1.1]: https://github.com/eventum/rpc/compare/v4.1.0...v4.1.1
+
 ## [4.1.0] - 2017-10-15
 
 - set xmlrpc useragent our library version, [41ed1c9]

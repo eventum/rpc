@@ -3,9 +3,11 @@
 ## [4.1.0] - 2017-10-15
 
 - set xmlrpc useragent our library version, [41ed1c9]
+- require phpxmlrpc >= 4.2.2, [a24f320]
 
 [4.1.0]: https://github.com/eventum/rpc/compare/v4.0.0...v4.1.0
 [41ed1c9]: https://github.com/eventum/rpc/commit/41ed1c9
+[a24f320]: https://github.com/eventum/rpc/commit/a24f320
 
 ## [4.0.0] - 2016-11-23
 

@@ -1,21 +1,22 @@
 language: php
 sudo: false
+dist: trusty
 
-php:
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-  - nightly
-  - hhvm
-
-matrix:
+jobs:
   fast_finish: true
   allow_failures:
-    - php: 7.0
-    - php: nightly
-    - php: hhvm
+    - php: "hhvm"
+  include:
+    - php: "5.3"
+      dist: precise
+    - php: "5.4"
+    - php: "5.5"
+    - php: "5.6"
+    - php: "7.0"
+    - php: "7.1"
+    - php: "7.2"
+    - php: "nightly"
+    - php: "hhvm"
 
 cache:
   apt: true
@@ -25,8 +26,10 @@ cache:
 
 install:
   - composer install --no-interaction --prefer-dist
+  - composer require --dev phpunit/phpunit
 
 script:
-  - phpunit -v --debug
+  - vendor/bin/phpunit --version
+  - vendor/bin/phpunit --verbose
 
 # vim:ts=2:sw=2:et

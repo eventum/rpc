@@ -32,6 +32,7 @@ install:
   - composer install --no-interaction --prefer-dist
 
 script:
-  - phpunit -v --debug
+  - phpunit --version
+  - phpunit --verbose
 
 # vim:ts=2:sw=2:et

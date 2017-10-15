@@ -30,6 +30,7 @@ cache:
 
 install:
   - composer install --no-interaction --prefer-dist
+  - composer require --dev phpunit/phpunit
 
 script:
   - phpunit --version

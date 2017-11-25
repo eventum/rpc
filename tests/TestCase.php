@@ -13,6 +13,6 @@
 
 namespace Eventum\RPC\Test;
 
-class TestCase extends \PHPUnit\Framework\TestCase
+abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
 }

@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Feventum%2Frpc.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Feventum%2Frpc?ref=badge_shield)
+
 eventum-rpc
 ===========
 
@@ -61,3 +63,6 @@ This software is Copyright (c) 2008 - 2017 Eventum Team.
 
 This is free software, licensed under the GNU General Public License
 version 2.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Feventum%2Frpc.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Feventum%2Frpc?ref=badge_large)

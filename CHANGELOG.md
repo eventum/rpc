@@ -1,5 +1,13 @@
 # Eventum RPC Client Library
 
+## [4.2.0] - 2018-05-01
+
+- Move classes to `Eventum\RPC` namespace, deprecate root namespace [#4]
+- Update xmlrpc methods doc, include `@method` annotation, [#4]
+
+[4.2.0]: https://github.com/eventum/rpc/compare/v4.1.1...v4.2.0
+[#4]: https://github.com/eventum/rpc/pull/4
+
 ## [4.1.1] - 2017-10-15
 
 - add `addUserAgent` method for public access

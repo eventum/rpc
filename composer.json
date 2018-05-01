@@ -13,7 +13,10 @@
 		"phpxmlrpc/phpxmlrpc": "^4.2.2"
 	},
 	"autoload": {
-		"classmap": [ "src" ]
+		"psr-4": {
+			"Eventum\\RPC\\": "src/"
+		},
+		"classmap": [ "lib" ]
 	},
 	"autoload-dev": {
 		"psr-4": {

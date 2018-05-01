@@ -122,3 +122,5 @@ return Symfony\CS\Config\Config::create()
 	))
 	->finder($finder)
 ;
+
+// vim:ft=php

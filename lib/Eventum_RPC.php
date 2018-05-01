@@ -11,11 +11,11 @@
  * that were distributed with this source code.
  */
 
-use Eventum\RPC\XmlRpcClient;
+use Eventum\RPC\EventumXmlRpcClient;
 
 /**
- * @deprecated since 4.2.0, use \Eventum\RPC\XmlRpcClient
+ * @deprecated since 4.2.0, use \Eventum\RPC\EventumXmlRpcClient
  */
-class Eventum_RPC extends XmlRpcClient
+class Eventum_RPC extends EventumXmlRpcClient
 {
 }

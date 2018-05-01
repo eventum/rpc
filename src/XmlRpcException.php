@@ -13,8 +13,8 @@
 
 namespace Eventum\RPC;
 
-use RuntimeException;
+use Eventum_RPC_Exception;
 
-class XmlRpcException extends RuntimeException
+class XmlRpcException extends Eventum_RPC_Exception
 {
 }

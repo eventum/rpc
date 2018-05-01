@@ -11,8 +11,9 @@
  * that were distributed with this source code.
  */
 
-use Eventum\RPC\XmlRpcException;
-
-class Eventum_RPC_Exception extends XmlRpcException
+/**
+ * @deprecated since 4.2.0, use \Eventum\RPC\XmlRpcException instead
+ */
+class Eventum_RPC_Exception extends RuntimeException
 {
 }

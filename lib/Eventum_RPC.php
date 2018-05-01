@@ -13,6 +13,9 @@
 
 use Eventum\RPC\XmlRpcClient;
 
+/**
+ * @deprecated since 4.2.0, use \Eventum\RPC\XmlRpcClient
+ */
 class Eventum_RPC extends XmlRpcClient
 {
 }

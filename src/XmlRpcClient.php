@@ -11,13 +11,13 @@
  * that were distributed with this source code.
  */
 
-class Eventum_RPC_Exception extends Exception
-{
-}
+namespace Eventum\RPC;
 
-class Eventum_RPC
+use PhpXmlRpc;
+
+class XmlRpcClient
 {
-    const VERSION = '4.1.1';
+    const VERSION = '4.2.0';
 
     /** @var PhpXmlRpc\Client */
     private $client;
@@ -70,7 +70,7 @@ class Eventum_RPC
      * @param string $method
      * @param array $args
      * @return mixed
-     * @throws Eventum_RPC_Exception
+     * @throws XmlRpcException
      */
     public function __call($method, $args = array())
     {
@@ -94,10 +94,10 @@ class Eventum_RPC
         $result = $this->client->send($req);
 
         if ($result === 0) {
-            throw new Eventum_RPC_Exception($this->client->errstr);
+            throw new XmlRpcException($this->client->errstr);
         }
         if (is_object($result) && $result->faultCode()) {
-            throw new Eventum_RPC_Exception($result->faultString());
+            throw new XmlRpcException($result->faultString(), $result->faultCode());
         }
 
         return $this->encoder->decode($result->value());

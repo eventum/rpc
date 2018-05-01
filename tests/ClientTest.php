@@ -13,7 +13,9 @@
 
 namespace Eventum\RPC\Test;
 
+use Eventum\RPC\XmlRpcException;
 use Eventum_RPC;
+use Eventum_RPC_Exception;
 
 class ClientTest extends TestCase
 {
@@ -40,5 +42,23 @@ class ClientTest extends TestCase
         $client = new Eventum_RPC($url);
         $methods = $client->__call($method);
         $this->assertContains($method, $methods);
+
+        // test  that legacy exception class is catchable
+        try {
+            $client->unknownMethod($method);
+            $this->fail('Exception not thrown');
+        } catch (Eventum_RPC_Exception $e) {
+            $this->assertEquals('Unknown method', $e->getMessage());
+            $this->assertEquals(1, $e->getCode());
+        }
+
+        // test that new exception class is catchable
+        try {
+            $client->unknownMethod($method);
+            $this->fail('Exception not thrown');
+        } catch (XmlRpcException $e) {
+            $this->assertEquals('Unknown method', $e->getMessage());
+            $this->assertEquals(1, $e->getCode());
+        }
     }
 }

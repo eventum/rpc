@@ -1,5 +1,4 @@
-eventum-rpc
-===========
+# Eventum RPC
 
 Eventum RPC Client Library.
 
@@ -46,18 +45,18 @@ require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/vendor/autoload.php';
 
 $rpc_url = "http://example.org/rpc/xmlrpc.php";
-$client = new Eventum_RPC($rpc_url);
+$client = new \Eventum\RPC\EventumXmlRpcClient($rpc_url);
 $client->setCredentials("user@example.org", "password");
 
 // add user@example.org as authorized replier in issue $issue_id belonging to project $project_id
 $client->addAuthorizedReplier($issue_id, $project_id, "user@example.org");
 ```
 
-The available XMLRPC Methods can be seen from [here](XMLRPC.md).
+The available XMLRPC Methods can also be seen from [XMLRPC.md](XMLRPC.md).
 
 ## Copyright and License ##
 
-This software is Copyright (c) 2008 - 2017 Eventum Team.
+This software is Copyright (c) 2008 - 2018 Eventum Team.
 
 This is free software, licensed under the GNU General Public License
 version 2.

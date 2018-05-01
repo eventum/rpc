@@ -1,10 +1,10 @@
 ## Available XMLRPC methods ##
 
-Here are available XMLRPC methods in [Eventum](https://github.com/eventum/eventum) as of version 3.0.2.
+Here are available XMLRPC methods in [Eventum](https://github.com/eventum/eventum) as of version 3.4.0.
 The methods themselves are defined in [RemoteApi](https://github.com/eventum/eventum/blob/master/lib/eventum/rpc/RemoteApi.php) class in Eventum codebase.
 This output is created with Eventum [CLI](https://github.com/eventum/cli) application [DumpMethods](https://github.com/eventum/cli/blob/master/src/Command/DumpMethodsCommand.php) command.
 
-Methods marked `@access public` do not require authentication, while `@access restricted` (default) require that you either use `setCredentials` to pass authentication credentials, or put `login` and `password` as first two parameters for the call.
+Methods marked `@access public` do not require authentication, while `@access protected` (default) require that you either use `setCredentials` to pass authentication credentials, or put `login` and `password` as first two parameters for the call.
 
 ```php
     /**
@@ -57,6 +57,7 @@ Methods marked `@access public` do not require authentication, while `@access re
      * @param string $note
      * @return string
      * @access protected
+     * @since 3.3.0 checks user access and issue close state
      */
     function closeIssue(int, string, int, boolean, string): string
 
@@ -231,11 +232,11 @@ Methods marked `@access public` do not require authentication, while `@access re
      * @param DateTime $start
      * @param DateTime $end
      * @param struct $options
-     * @return string
+     * @return struct
      * @access protected
      * @since 3.0.2
      */
-    function getWeeklyReportData(int, string, string, struct): string
+    function getWeeklyReportData(int, string, string, struct): struct
 
     /**
      * @param string $email
@@ -249,6 +250,7 @@ Methods marked `@access public` do not require authentication, while `@access re
      * @param string $command
      * @return string
      * @access protected
+     * @deprecated since 3.3.0 this method does nothing
      */
     function logCommand(string): string
 
@@ -328,3 +330,4 @@ Methods marked `@access public` do not require authentication, while `@access re
      * @access protected
      */
     function unredeemIssue(int, array): string
+```

@@ -1,5 +1,7 @@
 # Eventum RPC Client Library
 
+## UNRELEASED
+
 ## [4.2.0] - 2018-05-01
 
 - Move classes to `Eventum\RPC` namespace, deprecate root namespace [#4]

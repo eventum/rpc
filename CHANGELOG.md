@@ -3,8 +3,10 @@
 ## UNRELEASED
 
 - Make cloning object do clone used objects as well, [#5]
+- Add fluent interface for setter methods, [#6]
 
 [#5]: https://github.com/eventum/rpc/pull/5
+[#6]: https://github.com/eventum/rpc/pull/6
 
 ## [4.2.0] - 2018-05-01
 

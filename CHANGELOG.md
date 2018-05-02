@@ -2,9 +2,13 @@
 
 ## UNRELEASED
 
+- Make cloning object do clone used objects as well, [#5]
+
+[#5]: https://github.com/eventum/rpc/pull/5
+
 ## [4.2.0] - 2018-05-01
 
-- Move classes to `Eventum\RPC` namespace, deprecate root namespace [#4]
+- Move classes to `Eventum\RPC` namespace, deprecate root namespace, [#4]
 - Update xmlrpc methods doc, include `@method` annotation, [#4]
 
 [4.2.0]: https://github.com/eventum/rpc/compare/v4.1.1...v4.2.0

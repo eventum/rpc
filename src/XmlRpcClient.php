@@ -33,6 +33,12 @@ class XmlRpcClient
         $this->addUserAgent('EventumRPC/' . self::VERSION);
     }
 
+    public function __clone()
+    {
+        $this->client = clone $this->client;
+        $this->encoder = clone $this->encoder;
+    }
+
     /**
      * Change the current debug mode
      *

@@ -43,10 +43,13 @@ class XmlRpcClient
      * Change the current debug mode
      *
      * @param int $debug where 1 = on, 0 = off
+     * @return $this
      */
     public function setDebug($debug)
     {
         $this->client->setDebug($debug);
+
+        return $this;
     }
 
     /**
@@ -54,17 +57,33 @@ class XmlRpcClient
      *
      * @param string $username the user name
      * @param string $password the password
+     * @return $this
      */
     public function setCredentials($username, $password)
     {
         $this->client->setCredentials($username, $password);
+
+        return $this;
+    }
+
+    /**
+     * Add identifier to user agent
+     *
+     * @param string $userAgent
+     * @return $this
+     */
+    public function addUserAgent($userAgent)
+    {
+        $this->client->user_agent .= ' ' . $userAgent;
+
+        return $this;
     }
 
     /**
      * Implementation independent method to encode value as binary
      *
      * @param mixed $value
-     * @return \PhpXmlRpc\Value
+     * @return PhpXmlRpc\Value
      * @since 3.0.1
      */
     public function encodeBinary($value)
@@ -107,15 +126,5 @@ class XmlRpcClient
         }
 
         return $this->encoder->decode($result->value());
-    }
-
-    /**
-     * Add identifier to user agent
-     *
-     * @param string $userAgent
-     */
-    public function addUserAgent($userAgent)
-    {
-        $this->client->user_agent .= ' ' . $userAgent;
     }
 }

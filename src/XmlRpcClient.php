@@ -17,7 +17,7 @@ use PhpXmlRpc;
 
 class XmlRpcClient
 {
-    const VERSION = '4.2.0';
+    const VERSION = '4.3.0';
 
     /** @var PhpXmlRpc\Client */
     private $client;

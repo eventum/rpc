@@ -1,10 +1,11 @@
 # Eventum RPC Client Library
 
-## UNRELEASED
+## [4.3.0] - 2018-05-02
 
 - Make cloning object do clone used objects as well, [#5]
 - Add fluent interface for setter methods, [#6]
 
+[4.3.0]: https://github.com/eventum/rpc/compare/v4.2.0...v4.3.0
 [#5]: https://github.com/eventum/rpc/pull/5
 [#6]: https://github.com/eventum/rpc/pull/6
 

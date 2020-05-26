@@ -15,6 +15,11 @@ namespace Eventum\RPC;
 
 use DateTime;
 
+/*
+ * Use eventum cli to generate this block:
+ *
+ * $ eventum.php dump --format=annotate
+ */
 /**
  * @method string addAuthorizedReplier(int $issue_id, int $project_id, string $new_replier)
  * @method struct addFile(int $issue_id, string $filename, string $mimetype, base64 $contents, string $file_description, bool $internal_only)

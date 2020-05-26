@@ -1,6 +1,6 @@
 ## Available XMLRPC methods ##
 
-Here are available XMLRPC methods in [Eventum](https://github.com/eventum/eventum) as of version 3.4.0.
+Here are available XMLRPC methods in [Eventum](https://github.com/eventum/eventum) as of version 3.4.2.
 The methods themselves are defined in [RemoteApi](https://github.com/eventum/eventum/blob/master/lib/eventum/rpc/RemoteApi.php) class in Eventum codebase.
 This output is created with Eventum [CLI](https://github.com/eventum/cli) application [DumpMethods](https://github.com/eventum/cli/blob/master/src/Command/DumpMethodsCommand.php) command.
 
@@ -78,6 +78,16 @@ Methods marked `@access public` do not require authentication, while `@access pr
      * @access protected
      */
     function getAbbreviationAssocList(int, boolean): struct
+
+    /**
+     * Returns the list of all users who are currently marked as
+     * clocked-in.
+     *
+     * @return array Returns pairs of usr_full_name => usr_email
+     * @access protected
+     * @since 3.4.2
+     */
+    function getClockedInList(): array
 
     /**
      * @param int $prj_id
@@ -177,6 +187,36 @@ Methods marked `@access public` do not require authentication, while `@access pr
     function getOpenIssues(int, boolean, string): array
 
     /**
+     * Get messages from irc_notice table that are not yet handled.
+     * Used by the IRC bot.
+     *
+     * @param int $prj_id
+     * @param int $limit
+     * @return array
+     * @access protected
+     * @since 3.4.2
+     */
+    function getPendingMessages(int, int): array
+
+    /**
+     * @param string $projectTitle
+     * @return array
+     * @access protected
+     * @since 3.4.2
+     */
+    function getProjectByName(string): array
+
+    /**
+     * Returns a simple list of issues that are currently set to some
+     * form of quarantine. This is mainly used by the IRC interface.
+     *
+     * @return array List of quarantined issues
+     * @access protected
+     * @since 3.4.2
+     */
+    function getQuarantinedIssueList(): array
+
+    /**
      * @return array
      * @access public
      */
@@ -262,6 +302,17 @@ Methods marked `@access public` do not require authentication, while `@access pr
      * @return string
      */
     function lookupCustomer(int, string, string): string
+
+    /**
+     * Mark event as sent.
+     * Used by the IRC bot.
+     *
+     * @param int $prj_id
+     * @param int $ino_id
+     * @access protected
+     * @since 3.4.2
+     */
+    function markEventSent(int, int): string
 
     /**
      * TODO: use boolean return

@@ -7,7 +7,7 @@
  * @license GNU General Public License, version 2 or later (GPL-2+)
  *
  * For the full copyright and license information,
- * please see the COPYING and AUTHORS files
+ * please see the LICENSE and AUTHORS files
  * that were distributed with this source code.
  */
 
@@ -94,8 +94,8 @@ class XmlRpcClient
     /**
      * @param string $method
      * @param array $args
-     * @return mixed
      * @throws XmlRpcException
+     * @return mixed
      */
     public function __call($method, $args = array())
     {

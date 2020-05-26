@@ -7,7 +7,7 @@
  * @license GNU General Public License, version 2 or later (GPL-2+)
  *
  * For the full copyright and license information,
- * please see the COPYING and AUTHORS files
+ * please see the LICENSE and AUTHORS files
  * that were distributed with this source code.
  */
 
@@ -19,7 +19,7 @@ use DateTime;
  * @method string addAuthorizedReplier(int $issue_id, int $project_id, string $new_replier)
  * @method struct addFile(int $issue_id, string $filename, string $mimetype, base64 $contents, string $file_description, bool $internal_only)
  * @method string assignIssue(int $issue_id, int $project_id, string $developer)
- * @method boolean checkAuthentication()
+ * @method bool checkAuthentication()
  * @method string closeIssue(int $issue_id, string $new_status, int $resolution_id, bool $send_notification, string $note)
  * @method string convertNote(int $issue_id, int $note_id, string $target, bool $authorize_sender)
  * @method struct getAbbreviationAssocList(int $prj_id, bool $show_closed)
@@ -43,7 +43,7 @@ use DateTime;
  * @method array getUserAssignedProjects(bool $only_customer_projects)
  * @method string getWeeklyReport(int $week, string $start, string $end, bool $separate_closed, int $prj_id)
  * @method struct getWeeklyReportData(int $prj_id, DateTime $start, DateTime $end, struct $options)
- * @method boolean isValidLogin(string $email, string $password)
+ * @method bool isValidLogin(string $email, string $password)
  * @method string logCommand(string $command)
  * @method string lookupCustomer(int $prj_id, string $field, string $value)
  * @method string mayChangeIssue(int $issue_id)

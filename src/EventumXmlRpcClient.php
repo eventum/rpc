@@ -40,6 +40,7 @@ use DateTime;
  * @method array getIncidentTypes(int $issue_id, bool $redeemed_only)
  * @method struct getIssueDetails(int $issue_id)
  * @method array getNote(int $issue_id, int $note_id)
+ * @method array getNoteDetails(int $note_id, array $fields)
  * @method array getNoteListing(int $issue_id)
  * @method array getOpenIssues(int $prj_id, bool $show_all_issues, string $status)
  * @method array getPendingMessages(int $prj_id, int $limit)

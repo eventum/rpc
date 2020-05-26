@@ -1,6 +1,6 @@
 ## Available XMLRPC methods ##
 
-Here are available XMLRPC methods in [Eventum](https://github.com/eventum/eventum) as of version 3.4.2.
+Here are available XMLRPC methods in [Eventum](https://github.com/eventum/eventum) as of version 3.8.14.
 The methods themselves are defined in [RemoteApi](https://github.com/eventum/eventum/blob/master/lib/eventum/rpc/RemoteApi.php) class in Eventum codebase.
 This output is created with Eventum [CLI](https://github.com/eventum/cli) application [DumpMethods](https://github.com/eventum/cli/blob/master/src/Command/DumpMethodsCommand.php) command.
 
@@ -169,6 +169,15 @@ Methods marked `@access public` do not require authentication, while `@access pr
      * @access protected
      */
     function getNote(int, int): array
+
+    /**
+     * @param int $note_id
+     * @param array $fields
+     * @return array
+     * @access protected
+     * @since 3.8.14
+     */
+    function getNoteDetails(int, array): array
 
     /**
      * @param int $issue_id

@@ -56,7 +56,7 @@ The available XMLRPC Methods can also be seen from [XMLRPC.md](XMLRPC.md).
 
 ## Copyright and License ##
 
-This software is Copyright (c) 2008 - 2018 Eventum Team.
+This software is Copyright (c) 2008 - 2020 Eventum Team.
 
 This is free software, licensed under the GNU General Public License
 version 2.

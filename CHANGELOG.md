@@ -1,5 +1,12 @@
 # Eventum RPC Client Library
 
+## [4.4.0] - 2020-05-28
+
+- Update methods documentation up to Eventum 3.8.14, [#8]
+
+[4.4.0]: https://github.com/eventum/rpc/compare/v4.3.0...v4.4.0
+[#8]: https://github.com/eventum/rpc/pull/7
+
 ## [4.3.0] - 2018-05-02
 
 - Make cloning object do clone used objects as well, [#5]

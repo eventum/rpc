@@ -25,6 +25,9 @@ cache:
     - $HOME/.composer/cache
     - vendor
 
+# to run tests locally, use wwtd:
+# https://github.com/grosser/wwtd
+
 install:
   - composer install --no-interaction --prefer-dist
   - composer require --dev phpunit/phpunit

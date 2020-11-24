@@ -5,7 +5,8 @@ dist: trusty
 jobs:
   fast_finish: true
   allow_failures:
-    - php: "hhvm"
+    - php: "master"
+    - php: "nightly"
   include:
     - php: "5.3"
       dist: precise
@@ -16,14 +17,18 @@ jobs:
     - php: "7.1"
     - php: "7.2"
     - php: "7.3"
+    - php: "7.4"
+    - php: "master"
     - php: "nightly"
-    - php: "hhvm"
 
 cache:
   apt: true
   directories:
     - $HOME/.composer/cache
     - vendor
+
+# to run tests locally, use wwtd:
+# https://github.com/grosser/wwtd
 
 install:
   - composer install --no-interaction --prefer-dist
